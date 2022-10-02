@@ -1,0 +1,16 @@
+.btn {
+  margin: 20px;
+  height: 50px;
+  cursor: pointer;
+  background-color: beige;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+}
+
+.btn:hover {
+  background-color: rgb(240, 240, 155);
+}
