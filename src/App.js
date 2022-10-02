@@ -5,7 +5,6 @@ import './App.css'
 import PlayerForm from './components/PlayerForm'
 import Button from './UI/Button'
 import players from './DB'
-import Result from './components/Result'
 import Mixer from './components/Mixer'
 
 function App() {
@@ -30,15 +29,16 @@ function App() {
   return (
     <div className="App">
       <h1>Mamaika Project</h1>
-      <div className="s">{selected.length}</div>
-      <Button title="Reset" onClick={resetSelected}>
-        <RiRefreshLine />
-      </Button>
-      <Button title="Creat Team">
-        <RiPlayFill />
-      </Button>
+      <div className="topBar">
+        <Button title="Reset" onClick={resetSelected}>
+          <RiRefreshLine />
+        </Button>
+        <span className="s">{selected.length}</span>
+        <Button title="Creat Team">
+          <RiPlayFill />
+        </Button>
+      </div>
       <PlayerForm players={state} toggle={toggleState} />
-      {/* <Result selected={selected} /> */}
       <Mixer selected={selected} />
     </div>
   )
