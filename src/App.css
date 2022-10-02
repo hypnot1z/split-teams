@@ -4,11 +4,14 @@
   margin: 0 auto;
 }
 .s {
-  position: sticky;
-  top: 0;
   color: orangered;
   font-size: 35px;
   font-weight: 800;
+}
+
+.topBar {
+  position: sticky;
+  top: 0;
 }
 
 .result {
