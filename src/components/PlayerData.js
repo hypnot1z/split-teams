@@ -10,7 +10,7 @@ function PlayerData({ player, toggle }) {
       className={`${styles.data} ${player.select ? styles.selectedPlayer : ''}`}
     >
       <PlayerContacts player={player} />
-      <div className={styles.rank}>{player.rank}</div>
+      <div>{player.rank}</div>
     </div>
   )
 }
