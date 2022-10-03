@@ -38,15 +38,18 @@ function App() {
   return (
     <div className="App">
       <h1>Mamaika Project</h1>
+      {selected.length < 10 && <h2>Выбери больше 10 игроков</h2>}
       {!show && (
         <div className="topBar">
           <Button title="Reset" onClick={resetSelected}>
             <RiRefreshLine />
           </Button>
           <span className="s">{selected.length}</span>
-          <Button title="Creat Team" onClick={() => openModal()}>
-            <RiPlayFill />
-          </Button>
+          {selected.length > 9 && (
+            <Button title="Creat Team" onClick={() => openModal()}>
+              <RiPlayFill />
+            </Button>
+          )}
         </div>
       )}
       {!show && <PlayerForm players={state} toggle={toggleState} />}
