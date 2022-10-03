@@ -6,9 +6,18 @@ import PlayerForm from './components/PlayerForm'
 import Button from './UI/Button'
 import players from './DB'
 import Mixer from './components/Mixer'
+import Modal from './components/Modal'
 
 function App() {
   const [state, setState] = useState(players)
+  const [show, setShow] = useState(false)
+
+  const openModal = () => {
+    setShow(true)
+  }
+  const closeModal = () => {
+    setShow(false)
+  }
 
   const toggleState = (id) => {
     setState(
@@ -29,17 +38,26 @@ function App() {
   return (
     <div className="App">
       <h1>Mamaika Project</h1>
-      <div className="topBar">
-        <Button title="Reset" onClick={resetSelected}>
-          <RiRefreshLine />
-        </Button>
-        <span className="s">{selected.length}</span>
-        <Button title="Creat Team">
-          <RiPlayFill />
-        </Button>
-      </div>
-      <PlayerForm players={state} toggle={toggleState} />
-      <Mixer selected={selected} />
+      {!show && (
+        <div className="topBar">
+          <Button title="Reset" onClick={resetSelected}>
+            <RiRefreshLine />
+          </Button>
+          <span className="s">{selected.length}</span>
+          <Button title="Creat Team" onClick={() => openModal()}>
+            <RiPlayFill />
+          </Button>
+        </div>
+      )}
+      {!show && <PlayerForm players={state} toggle={toggleState} />}
+      {!!show && (
+        <Mixer
+          selected={selected}
+          closeModal={closeModal}
+          onClick={() => closeModal()}
+        />
+      )}
+      {/* <Modal closeModal={closeModal} show={show} selected={selected} /> */}
     </div>
   )
 }

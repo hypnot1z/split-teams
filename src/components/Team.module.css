@@ -1,0 +1,6 @@
+.card {
+  border: 1px solid white;
+  list-style-position: inside;
+  width: 250px;
+  padding: 5px;
+}

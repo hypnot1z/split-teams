@@ -1,6 +1,6 @@
-import Output from './Output'
+import SplitTeams from './SplitTeams'
 
-function Mixer({ selected }) {
+function Mixer({ selected, closeModal }) {
   selected.sort((a, b) => b.rank - a.rank)
   let s = selected.length
 
@@ -34,7 +34,7 @@ function Mixer({ selected }) {
           }
         }
         teams = [teamOne, teamTwo]
-        return <Output teams={teams} />
+        return <SplitTeams teams={teams} closeModal={closeModal} />
       case 3:
         for (let i = 0; i < s; i = i + 3) {
           if (i + 1 === s) {
@@ -54,7 +54,7 @@ function Mixer({ selected }) {
         }
 
         teams = [teamOne, teamTwo, teamThree]
-        return <Output teams={teams} />
+        return <SplitTeams teams={teams} closeModal={closeModal} />
       case 4:
         for (let i = 0; i < s; i = i + 4) {
           if (i + 1 === s) {
@@ -80,7 +80,7 @@ function Mixer({ selected }) {
         }
 
         teams = [teamOne, teamTwo, teamThree, teamFour]
-        return <Output teams={teams} />
+        return <SplitTeams teams={teams} closeModal={closeModal} />
       case 5:
         for (let i = 0; i < s; i = i + 5) {
           if (i + 1 === s) {
@@ -113,7 +113,7 @@ function Mixer({ selected }) {
         }
 
         teams = [teamOne, teamTwo, teamThree, teamFour, teamFive]
-        return <Output teams={teams} />
+        return <SplitTeams teams={teams} closeModal={closeModal} />
       case 6:
       case 7:
         for (let i = 0; i < s; i = i + 6) {
@@ -150,7 +150,7 @@ function Mixer({ selected }) {
         }
 
         teams = [teamOne, teamTwo, teamThree, teamFour, teamFive, teamSix]
-        return <Output teams={teams} />
+        return <SplitTeams teams={teams} closeModal={closeModal} />
     }
   }
 }
