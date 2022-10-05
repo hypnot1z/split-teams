@@ -1,4 +1,4 @@
-# React project split-teams for SochiFootball 
+# React project split-teams for SochiFootbal
 
 ## Available Scripts
 
