@@ -1,5 +1,7 @@
 # React project split-teams for SochiFootbal
 
+Vercel app https://vercel.com/zagorskiyco-gmailcom/split-teams/9Y8JFhDnDQ8j2csmx3K5xgp1pTc2
+
 ## Available Scripts
 
 In the project directory, you can run:
